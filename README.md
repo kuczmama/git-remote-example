@@ -1,7 +1,7 @@
 ## Git Clone
 `git clone` is a command that clones a remote repository into a new folder on your local computer.
 
-When you are working with remotes, the command you will most likely use is `git clone`, to get started. 
+When you are working with remotes, the command you will most likely use is `git clone`, to get started.
 
 **NOTE** Git clone only needs to be run once.
 
@@ -26,3 +26,40 @@ The remote url that you use can be either SSH or HTTPS, both will work fine for 
 
 ### Git Clone Example
 Let's imagine that you want to clone a repository to get working with it it.
+
+## <a name='git-fetch'></a>Git Fetch
+If you are connected to a [remote](#git-remote) you can use the `git fetch` command to download data from it to your local repo.
+
+It's a very useful command if you are working on code with other people.
+
+Git fetch downloads data but it doesn't merge it, therefore it's pretty darn safe, compared to [git pull](#git-pull).
+
+### Git Fetch Usage
+The syntax for `git fetch` is as follows:
+
+```sh
+git fetch [remote]
+```
+
+Fetch all of the branches from the remote repository that you are currently tracking. This also downloads all commits and files from the other repository.
+
+It is also possible to just fetch the data from a specific branch on a remote.
+
+```sh
+git fetch [remote] [branch]
+```
+
+If you really want to get everything you can use the `--all` flag, and it will fetch all data from all remotes that you have. In case you have some more remotes.
+
+```
+git fetch --all
+```
+
+
+If you add the `--dry-run` flag, it will show you what `git fetch` will do before it actually does it, it will just output actions it will take, but not apply them.
+
+```sh
+git fetch --dry-run
+```
+
+**NOTE** Git fetch is a very safe command so you most likely won't need to use the `--dry-run` flag.
